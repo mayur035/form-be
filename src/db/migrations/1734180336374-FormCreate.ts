@@ -2,11 +2,12 @@ import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
 export class FormCreate1734180336374 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
-    const checkFormTable = await queryRunner.hasTable("form");
+    const checkFormTable = await queryRunner.hasTable("public.form");
     if (!checkFormTable) {
       await queryRunner.createTable(
         new Table({
           name: "form",
+          schema:"public",
           columns: [
             {
               name: "id",
