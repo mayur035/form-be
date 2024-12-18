@@ -11,7 +11,8 @@ export const DataSources = new DataSource({
   password: process.env.DATABASE_USERPWD,
   synchronize: false,
   database: "form_database",
-   entities: [process.env.NODE_ENV === "production" ? "./dist/entities/**/*{.js,.ts}" : "./src/entities/**/*{.ts,.js}"],
+  schema:"public",
+  entities: [process.env.NODE_ENV === "production" ? "./dist/entities/**/*{.js,.ts}" : "./src/entities/**/*{.ts,.js}"],
   migrations: [process.env.NODE_ENV === "production" ? "./dist/migrations/*{.js,.ts}" : "./src/migrations/*{.ts,.js}"],
   //   migrationsTableName: "migrations",
 });
