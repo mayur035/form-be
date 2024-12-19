@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity({ schema: "form_schema", name: "form" })
+@Entity("form")
 export class FormEntity {
   @PrimaryGeneratedColumn()
   id!: number;
