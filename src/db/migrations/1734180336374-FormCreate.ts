@@ -2,12 +2,9 @@ import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
 export class FormCreate1734180336374 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
-    const checkFormTable = await queryRunner.hasTable("form_schema.form");
-    if (!checkFormTable) {
       await queryRunner.createTable(
         new Table({
           name: "form",
-          schema:"form_schema",
           columns: [
             {
               name: "id",
@@ -57,7 +54,6 @@ export class FormCreate1734180336374 implements MigrationInterface {
           ],
         })
       );
-    }
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {}
