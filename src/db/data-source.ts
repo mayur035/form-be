@@ -10,10 +10,10 @@ export const DataSources = new DataSource({
   port: Number(process.env.DATABASE_USERPORT),
   username: process.env.DATABASE_USERNAME,
   password: process.env.DATABASE_USERPWD,
-  synchronize: false,
+  synchronize: true,
   database: "form_database",
-  schema: "form_schema",
-  entities: [FormEntity],
+  // schema: "form_schema",
+  entities: [FormEntity]
   // migrations: [
   //   process.env.NODE_ENV === "production"
   //     ? "./dist/migrations/*{.js,.ts}"
