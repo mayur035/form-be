@@ -14,10 +14,10 @@ export const DataSources = new DataSource({
   database: "form_database",
   // schema: "form_schema",
   entities: [FormEntity]
-  // migrations: [
-  //   process.env.NODE_ENV === "production"
-  //     ? "./dist/migrations/*{.js,.ts}"
-  //     : "./src/migrations/*{.ts,.js}",
-  // ],
+  migrations: [
+    process.env.NODE_ENV === "production"
+      ? "./dist/migrations/*{.js,.ts}"
+      : "./src/migrations/*{.ts,.js}",
+  ],
   //   migrationsTableName: "migrations",
 });
