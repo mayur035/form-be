@@ -7,7 +7,7 @@ export class FormCreate1734180336374 implements MigrationInterface {
       await queryRunner.createTable(
         new Table({
           name: "form",
-          schema: "form_schema",
+          schema:"form_schema",
           columns: [
             {
               name: "id",
