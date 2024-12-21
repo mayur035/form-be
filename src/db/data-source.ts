@@ -1,7 +1,6 @@
 import dotenv from "dotenv";
 import "reflect-metadata";
 import { DataSource } from "typeorm";
-import { FormEntity } from "./entities/form.entity";
 dotenv.config();
 
 export const DataSources = new DataSource({
@@ -13,13 +12,15 @@ export const DataSources = new DataSource({
   synchronize: true,
   database: "form_database",
   schema: "form_schema",
-  entities: [process.env.NODE_ENV === "production"
-    ? "dist/entities/*{.js,.ts}"
-    : "src/entities/*{.ts,.js}",],
+  entities: [
+    process.env.NODE_ENV === "production"
+      ? "dist/db/entities/*{.js,.ts}"
+      : "src/db/entities/*{.ts,.js}",
+  ],
   migrations: [
     process.env.NODE_ENV === "production"
-      ? "dist/migrations/*{.js,.ts}"
-      : "src/migrations/*{.ts,.js}",
+      ? "dist/db/migrations/*{.js,.ts}"
+      : "src/db/migrations/*{.ts,.js}",
   ],
   //   migrationsTableName: "migrations",
 });
