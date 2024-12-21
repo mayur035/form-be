@@ -12,7 +12,7 @@ export const DataSources = new DataSource({
   password: process.env.DATABASE_USERPWD,
   synchronize: true,
   database: "form_database",
-  // schema: "form_schema",
+  schema: "form_schema",
   entities: [FormEntity],
   migrations: [
     process.env.NODE_ENV === "production"
