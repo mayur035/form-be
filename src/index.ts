@@ -1,8 +1,8 @@
+import cors from "cors";
 import dotenv from "dotenv";
 import express, { Express, Request, Response, urlencoded } from "express";
 import { DataSources } from "./db/data-source";
 import { formRoute } from "./routes/form.routes";
-import cors from 'cors'
 
 dotenv.config();
 
@@ -17,7 +17,7 @@ app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");
 });
 
-app.use("/form", formRoute);
+app.use("/api", formRoute);
 
 app.listen(port, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`);

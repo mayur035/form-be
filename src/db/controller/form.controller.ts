@@ -4,13 +4,13 @@ import { DataSources } from "../data-source";
 import { FormEntity } from "../entities/form.entity";
 
 export const formPost = async (req: Request, res: Response) => {
-  const { fname, lname, email, phone, address } = req.body;
+  const { firstName, lastName, email, phone, address } = req.body;
   try {
     const formRepository = DataSources.getRepository(FormEntity);
 
     const form = new FormEntity();
-    form.first_name = fname;
-    form.last_name = lname;
+    form.first_name = firstName;
+    form.last_name = lastName;
     form.address = address;
     form.email = email;
     form.phone = phone;
