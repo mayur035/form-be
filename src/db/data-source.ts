@@ -13,11 +13,13 @@ export const DataSources = new DataSource({
   synchronize: true,
   database: "form_database",
   schema: "form_schema",
-  entities: [FormEntity],
+  entities: [process.env.NODE_ENV === "production"
+    ? "dist/entities/*{.js,.ts}"
+    : "src/entities/*{.ts,.js}",],
   migrations: [
     process.env.NODE_ENV === "production"
-      ? "./dist/migrations/*{.js,.ts}"
-      : "./src/migrations/*{.ts,.js}",
+      ? "dist/migrations/*{.js,.ts}"
+      : "src/migrations/*{.ts,.js}",
   ],
   //   migrationsTableName: "migrations",
 });
